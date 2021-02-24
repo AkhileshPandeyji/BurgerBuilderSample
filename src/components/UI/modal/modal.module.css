@@ -1,0 +1,52 @@
+@keyframes modalAnimation{
+    0% {
+        transform:translateY(-50%);
+    }
+    50% {
+        transform:translateY(0);
+    }
+    75% {
+        transform:translateY(-20px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.Modal{
+    position: absolute;
+    z-index:200;
+    height:200px;
+    width:500px;
+    background: #eaeaea;
+    left:30%;
+    top:40%;
+    border-radius: 20px;
+    animation:modalAnimation 0.4s forwards ease-in;
+}
+
+.Message{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.MessageOptions{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.MessageOptions button{
+  width: 200px;
+  height: 60px;
+  border: none;
+  background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px 4px #dfdfdf;
+  margin-top: 40px;
+  font-weight:bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

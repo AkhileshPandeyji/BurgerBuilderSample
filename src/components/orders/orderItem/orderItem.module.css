@@ -1,0 +1,41 @@
+.OrderItem {
+  background: white;
+  height: 120px;
+  width: 80%;
+  margin: auto;
+  margin-top: 12px;
+  margin-bottom: 7px;
+  box-shadow: 4px 4px 4px 4px #d3d0d0;
+  border:1px solid #d3d0d0;
+  border-radius: 10px;
+  padding: 5px 15px 5px 15px; 
+
+}
+
+.NewItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.OrderItem h3:first-child{
+    height:20px;
+    font-size: 1rem;
+    padding: 0;
+    color:#aca6a6;
+}
+.OrderBox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.OrderBox p {
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.OrderBox h3{
+    margin-left: 640px;
+    font-size: 1.2rem;
+}

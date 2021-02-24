@@ -1,0 +1,24 @@
+.NavigationLogo {
+  text-align: center;
+  height: 70px;
+  width: 275px;
+  margin-right: 48vw;
+  display: flex;
+  align-items: center;
+  /* text-align: ; */
+}
+
+.NavigationLogo img {
+  height: 100%;
+  width: 90px;
+  margin-right: 10px;
+}
+.NavigationLogo h3{
+    font-size: 18px;
+    width:130px;
+    height:max-content;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+    text-align: left;
+}

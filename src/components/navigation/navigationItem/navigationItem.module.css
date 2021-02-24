@@ -1,0 +1,43 @@
+.NavigationItem {
+  text-align: center;
+  box-sizing: border-box;
+  color: white;
+  font-size: 0.8rem;
+  margin: 2.5px 15px 2.5px 10px;
+  text-decoration: none;
+}
+.NavigationItem h3:hover {
+  border-bottom: 2px solid;
+  border-color: #e2e61b;
+  cursor: pointer;
+  color: #e2e61b;
+}
+.Selected h3 {
+  border-bottom: 2px solid;
+  border-color: #e2e61b;
+  cursor: pointer;
+  color: #e2e61b;
+}
+.NavigationItemSidebar {
+  color: #292323;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  text-decoration: none;
+  height: 50px;
+  text-align: left;
+}
+.NavigationItemSidebar h3 {
+  /* border-bottom: 2px solid #ccccc8; */
+  padding-left: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  transition: all 0.2s ease-in;
+}
+.NavigationItemSidebar h3:hover {
+  /* border-bottom: 2px solid #e2e61b; */
+  cursor: pointer;
+  color: #e90c6c;
+  padding-left: 40px;
+  text-decoration: underline;
+}

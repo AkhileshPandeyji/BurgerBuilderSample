@@ -1,0 +1,19 @@
+.Sidebar{
+    position:absolute;
+    z-index:300;
+    height:calc(100vh - 60px);
+    width:300px;
+    background:white;
+    left:0px;
+    top:60px;
+    animation: sidebarAnimation 0.2s forwards ease-in-out;
+}
+
+@keyframes sidebarAnimation{
+    from{
+        transform:translateX(-300px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}

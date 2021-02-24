@@ -1,0 +1,10 @@
+.BurgerBuilder {
+  width: 100%;
+  height: max-content;
+  background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

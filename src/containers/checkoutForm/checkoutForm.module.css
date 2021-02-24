@@ -1,0 +1,50 @@
+.OrderDetails {
+  margin-bottom: 40px;
+}
+.ContactForm {
+  text-align: center;
+  width: 40%;
+  height: max-content;
+  padding: 20px 5px 20px 5px;
+  margin: auto;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 8px 4px #dfdfdf;
+  border: 1px solid #dfdfdf;
+}
+.ContactForm button {
+  width: 200px;
+  height: 60px;
+  border: none;
+  background-image: linear-gradient(
+    -225deg,
+    #a445b2 0%,
+    #d41872 52%,
+    #ff0066 100%
+  );
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px 4px #dfdfdf;
+  margin-top: 20px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ContactForm input {
+  height: 40px;
+  width: 80%;
+  margin: 10px 50px 10px 50px;
+  border: 1px solid #cccaca;
+  border-radius: 4px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+}
+.ContactForm select {
+  height: 40px;
+  width: 50%;
+  margin: 10px 50px 0px 50px;
+  border: 1px solid #cccaca;
+  border-radius: 4px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+}

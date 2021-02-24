@@ -1,0 +1,13 @@
+.OrderBtn {
+  width: 200px;
+  height: 60px;
+  border: none;
+  background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px 4px #dfdfdf;
+  margin-top: 10px;
+  font-weight:bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
