@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { startLoad, stopLoad } from '../../redux/ducks/overallUIReducer';
 import Spinner from '../UI/spinner/spinner';
 import prices from '../../utility/prices/prices';
+import emptyCart from '../../assets/emptyCart.png';
 
 const calculatePrice = (ingredients) => {
   let price = 20;
@@ -56,6 +57,11 @@ const Orders = (props) => {
       </div>
       {isLoading ? (
         <Spinner />
+      ) : orders.length === 0 ? (
+        <div className={classes.NoOrderBox}>
+          <p>Your do not Have Any Orders Yet...</p>
+          <img src={emptyCart} alt='emptyCart' />
+        </div>
       ) : (
         orders.map((orderObj, idx) => {
           return (

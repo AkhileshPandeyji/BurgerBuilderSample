@@ -6,3 +6,11 @@
 .OrdersTitle{
     text-align: center;
 }
+.NoOrderBox{
+    text-align: center;
+}
+.NoOrderBox p{
+    font-size:1.2rem;
+    color:#8b8484;
+    font-weight: bold;
+}

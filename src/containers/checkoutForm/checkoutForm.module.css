@@ -11,6 +11,19 @@
   box-shadow: 4px 4px 8px 4px #dfdfdf;
   border: 1px solid #dfdfdf;
 }
+
+.ErrorBox {
+  margin: 10px 50px 10px 50px;
+  border-radius: 10px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.ErrorBox h3 {
+  color: red;
+  font-size: 12px;
+}
+
 .ContactForm button {
   width: 200px;
   height: 60px;

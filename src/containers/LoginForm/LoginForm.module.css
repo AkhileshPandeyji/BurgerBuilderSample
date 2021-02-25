@@ -1,5 +1,5 @@
 .LoginForm {
-  height: 300px;
+  height: max-content;
   width: 600px;
   background: white;
   margin: auto;
@@ -20,14 +20,25 @@
   font-size: 1.2rem;
 }
 
-.LoginForm h4{
+.LoginForm h4 {
   font-size: 1.5rem;
   margin: 5px auto 5px auto;
 }
+.ErrorBox {
+  margin: 10px 50px 10px 50px;
+  border-radius: 10px;
+  text-align: left;
+  padding-left: 20px;
+}
 
-.ButtonDiv{
-    text-align: center;
-    margin-top: 10px;
+.ErrorBox h3 {
+  color: red;
+  font-size: 12px;
+}
+
+.ButtonDiv {
+  text-align: center;
+  margin-top: 10px;
 }
 .LoginForm button {
   width: 200px;
@@ -46,11 +57,11 @@
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.LoginForm p{
-    text-decoration: underline;
-    color:#ada7a7;
-    cursor:pointer;
+.LoginForm p {
+  text-decoration: underline;
+  color: #ada7a7;
+  cursor: pointer;
 }
-.LoginForm p:hover{
-    color:#48cff8df
+.LoginForm p:hover {
+  color: #48cff8df;
 }

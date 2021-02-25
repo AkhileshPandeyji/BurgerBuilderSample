@@ -4,47 +4,53 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import { authStart } from '../../redux/ducks/authenticationReducer';
 import { startLoad, stopLoad } from '../../redux/ducks/overallUIReducer';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const LoginForm = (props) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [toggleLogin, setToggleLogin] = useState(false);
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .email('Invalid email format')
+      .required('Email id is required'),
+    password: Yup.string()
+      .min(8, 'Password must be atleast 8 chars long')
+      .max(32, 'Password must not be greater than 32 chars long')
+      .required('Password is Required'),
+  });
 
-  const changeValue = (event) => {
-    let value = event.target.value;
-    if (event.target.name === 'email') setEmail(value);
-    else setPassword(value);
-  };
+  const { handleSubmit, handleChange, values, errors, touched } = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema,
+    onSubmit: (values, { setSubmitting, resetForm }) => {
+      if (toggleLogin) {
+        props.authenticate(
+          values.email,
+          values.password,
+          '/accounts:signUp?key=AIzaSyD4naqiChzIbvP5XpvHq_cEoA0TzTgpScc',
+          props.startLoading,
+          props.stopLoading
+        );
+        resetForm();
+        if (props.auth.error === null) props.history.push('/');
+      } else {
+        props.authenticate(
+          values.email,
+          values.password,
+          '/accounts:signInWithPassword?key=AIzaSyD4naqiChzIbvP5XpvHq_cEoA0TzTgpScc',
+          props.startLoading,
+          props.stopLoading
+        );
+        resetForm();
+        if (props.auth.error === null) props.history.push('/');
+      }
+      setSubmitting(false);
+    },
+  });
 
-  const clearAll = () => {
-    setEmail('');
-    setPassword('');
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (toggleLogin) {
-      props.authenticate(
-        email,
-        password,
-        '/accounts:signUp?key=AIzaSyD4naqiChzIbvP5XpvHq_cEoA0TzTgpScc',
-        props.startLoading,
-        props.stopLoading
-      );
-      clearAll();
-      if (props.auth.error === null) props.history.push('/');
-    } else {
-      props.authenticate(
-        email,
-        password,
-        '/accounts:signInWithPassword?key=AIzaSyD4naqiChzIbvP5XpvHq_cEoA0TzTgpScc',
-        props.startLoading,
-        props.stopLoading
-      );
-      clearAll();
-      if (props.auth.error === null) props.history.push('/');
-    }
-  };
   const toggleLoginBtn = () => {
     setToggleLogin((prevState) => {
       return !prevState;
@@ -56,14 +62,20 @@ const LoginForm = (props) => {
       <div style={{ textAlign: 'center' }}>
         <h4>Burger Munch</h4>
       </div>
+      <div className={classes.ErrorBox}>
+        {errors.email && touched.email ? <h3>{'* ' + errors.email}</h3> : null}
+        {errors.password && touched.password ? (
+          <h3>{'* ' + errors.password}</h3>
+        ) : null}
+      </div>
       <form onSubmit={handleSubmit}>
         <div>
           <input
             type='email'
             name='email'
             placeholder='Email'
-            value={email}
-            onChange={changeValue}
+            value={values.email}
+            onChange={handleChange}
           />
         </div>
         <div>
@@ -71,8 +83,8 @@ const LoginForm = (props) => {
             type='password'
             name='password'
             placeholder='Password'
-            value={password}
-            onChange={changeValue}
+            value={values.password}
+            onChange={handleChange}
           />
         </div>
         <div className={classes.ButtonDiv}>
